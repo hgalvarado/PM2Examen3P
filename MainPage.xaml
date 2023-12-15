@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="PM2Examen3P.MainPage">
+
+    <StackLayout Padding="20" Spacing="15" VerticalOptions="CenterAndExpand">
+
+        <Image VerticalOptions="Start" 
+               Margin="10" 
+               x:Name="ImgFoto"
+               WidthRequest="100" 
+               HeightRequest="200" 
+               Background="Gray"/>
+
+        <Button x:Name="btnTomarFoto"
+              Text="Tomar foto"
+              TextColor="White"
+              Margin="5"
+              Clicked="btnTomarFoto_Clicked"
+      />
+
+        <Entry x:Name="txtDescripcion" 
+               Placeholder="Descripcion" 
+               FontSize="16" 
+               BackgroundColor="White" />
+
+        <DatePicker x:Name="datePicker" />
+
+        <TimePicker x:Name="timePicker" />
+
+        <Button x:Name="btnGrabarAudio"
+                  Text="Grabar Audio"
+                  TextColor="White" 
+                  Margin="5"
+                  Clicked="btnGrabarAudio_Clicked"
+       />
+
+        <!-- Botón Guardar -->
+        <Button x:Name="btnGuardar" 
+                Text="Guardar" 
+                Clicked="btnGuardar_Clicked" 
+                BackgroundColor="#4CAF50" 
+                TextColor="White" 
+                FontSize="16" />
+
+        <!-- Botón Listar -->
+        <Button x:Name="btnListar" 
+                Text="Listar Personas" 
+                Clicked="btnListar_Clicked" 
+                TextColor="White" 
+                FontSize="16"/>
+
+        <Label x:Name="lblUrl"
+     IsVisible="false"/>
+    </StackLayout>
+
+</ContentPage>

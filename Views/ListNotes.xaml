@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2Examen3P.Views.ListNotes"
+             xmlns:conver="clr-namespace:PM2Examen3P.Controllers"
+             Title="Lista de Notas">
+    
+    <ContentPage.Resources>
+        <conver:Byte_array_image x:Key="byte_array_image"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="list" Margin="5" ItemsSource="{Binding list_Notes}"  ItemSelected="list_ItemSelected">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Margin="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Column="0" 
+                                       x:Name="image" 
+                                       Source="{Binding photo_record,Converter={StaticResource byte_array_image}}" 
+                                       WidthRequest="70" 
+                                       HeightRequest="70"
+                                       />
+                                <Label Grid.Column="1" 
+                                       Margin="2"
+                                       Text="{Binding descripcion} "
+                                       ></Label>
+                                <Label Grid.Column="2" 
+                                       Margin="2"
+                                       Text="{Binding fecha}"
+                                       ></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
